@@ -38,6 +38,8 @@ Spark uses a concept called Pure function to solve problem of procedural program
 ## Lets understand same using code:
 - sc.parallelize - command distributes your data to different nodes on your cluster
 - data.collect() - command collects the details of Lazy evaluation from all nodes of cluster back to the master node. At the master node level, spark decide about the stages in which it wants to process this data. Meaning, spark build stages and process them as per the details collected by DAG.
+- Hence, when you run collect() or show() function in spark, thats when spark evaluates and process original data.
+- 
 
 ### How spark Distribute Data?
 - Using HDFS techniques - divide data into blocks of size (64 or 128 MB). This block size can be customized.
@@ -88,6 +90,23 @@ Window functions are a way of combining the values of ranges of rows in a DataFr
 
 For further information see the Spark SQL, DataFrames and Datasets Guide (https://spark.apache.org/docs/latest/sql-programming-guide.html) and the Spark Python API Docs (https://spark.apache.org/docs/latest/api/python/index.html).
 
+
+
+### Spark SQL Resources
+- Spark SQL built-in functions (https://spark.apache.org/docs/latest/api/sql/index.html)
+- Spark SQL guide (https://spark.apache.org/docs/latest/sql-getting-started.html)
+
+##### toPandas() function can be used to Converting Results to Pandas
+
+### RDD 
+- The flow of a typical spark application
+    - you can code either in python or SQL, that goes to query optimizer (Catalyst)
+    - this catalyst creates DAG, also known as Execution plan
+    - This DAG then goes to RDD (Resilient Distributed Data set)
+    - RDD requires more indepths steps details, similar to what we discussed in Imperitive programming definition up.
+    - Before Spark version 2.0, developers needs to work with RDDs to define code
+    - but after Spark version 2.0, Data Frame and Datasets API were unified.
+    - Now-a-days, usually developers don't use RDD code, as its dificult to write and manage comparatively. 
 
 
 

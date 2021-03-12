@@ -38,8 +38,20 @@ Spark uses a concept called Pure function to solve problem of procedural program
 ## Lets understand same using code:
 - sc.parallelize - command distributes your data to different nodes on your cluster
 - data.collect() - command collects the details of Lazy evaluation from all nodes of cluster back to the master node. At the master node level, spark decide about the stages in which it wants to process this data. Meaning, spark build stages and process them as per the details collected by DAG.
-- 
-- 
+
+### How spark Distribute Data?
+- Using HDFS techniques - divide data into blocks of size (64 or 128 MB). This block size can be customized.
+- Then these data blocks send across different nodes of clusters.
+- These blocks can be stored in multiple locations to make is fault taulerant.
+
+### A spark program consist of below components
+- SparkSession - the spark SQL context, this will create spark Data frame
+- SparkContext - entry point for spark functionality and connect cluster with application
+- sparkConf - Used to configure basic environment settings, like ip-address, block size, etc,
+
+Tips - 
+- If Spark is used in a cluster mode all the worker nodes need to have access to the input data source. If you're trying to import a file saved only on the local disk of the driver node you'll receive an error message.
+- Loading the file should work if all the nodes have it saved under the same path.
 
 
 

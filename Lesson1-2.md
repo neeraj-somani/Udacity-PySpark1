@@ -1,4 +1,4 @@
-# Udacity-PySpark1
+# Udacity-PySpark1 - Lesson 1 and 2
 
 This notebook will cover concepts learned in Udacity pySpark course -- https://classroom.udacity.com/courses/ud2002
 

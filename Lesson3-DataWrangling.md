@@ -1,4 +1,4 @@
-## Notes from Lesson 3 and 4
+## Notes from Lesson 3 - Data Wrangling
 
 ## Lesson Overview
 - Wrangling data with Spark
